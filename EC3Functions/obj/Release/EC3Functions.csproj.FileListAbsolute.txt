@@ -1,0 +1,34 @@
+C:\Documents and Settings\david.allgayer\My Documents\Visual Studio 2005\Projects\EC3Functions\EC3Functions\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\david.allgayer\My Documents\Visual Studio 2005\Projects\EC3Functions\EC3Functions\obj\Release\EC3Functions.dll
+C:\Documents and Settings\david.allgayer\My Documents\Visual Studio 2005\Projects\EC3Functions\EC3Functions\obj\Release\EC3Functions.pdb
+C:\Documents and Settings\david.allgayer\My Documents\Visual Studio 2005\Projects\EC3Functions\EC3Functions\bin\Release\EC3Functions.dll
+C:\Documents and Settings\david.allgayer\My Documents\Visual Studio 2005\Projects\EC3Functions\EC3Functions\bin\Release\EC3Functions.pdb
+C:\Documents and Settings\david.allgayer\My Documents\Visual Studio 2005\Projects\EC3Functions\EC3Functions\bin\Release\ExcelDna.Integration.dll
+C:\Documents and Settings\david.allgayer\My Documents\Visual Studio 2008\Projects\EC3Functions\EC3Functions\bin\Release\EC3Functions.dll
+C:\Documents and Settings\david.allgayer\My Documents\Visual Studio 2008\Projects\EC3Functions\EC3Functions\bin\Release\EC3Functions.pdb
+C:\Documents and Settings\david.allgayer\My Documents\Visual Studio 2008\Projects\EC3Functions\EC3Functions\bin\Release\ExcelDna.Integration.dll
+C:\Documents and Settings\david.allgayer\My Documents\Visual Studio 2008\Projects\EC3Functions\EC3Functions\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\david.allgayer\My Documents\Visual Studio 2008\Projects\EC3Functions\EC3Functions\obj\Release\EC3Functions.dll
+C:\Documents and Settings\david.allgayer\My Documents\Visual Studio 2008\Projects\EC3Functions\EC3Functions\obj\Release\EC3Functions.pdb
+O:\dotNet\EC3Functions\EC3Functions\EC3Functions\bin\Release\EC3Functions.dll
+O:\dotNet\EC3Functions\EC3Functions\EC3Functions\bin\Release\EC3Functions.pdb
+O:\dotNet\EC3Functions\EC3Functions\EC3Functions\bin\Release\ExcelDna.Integration.dll
+O:\dotNet\EC3Functions\EC3Functions\EC3Functions\obj\Release\ResolveAssemblyReference.cache
+O:\dotNet\EC3Functions\EC3Functions\EC3Functions\obj\Release\EC3Functions.dll
+O:\dotNet\EC3Functions\EC3Functions\EC3Functions\obj\Release\EC3Functions.pdb
+J:\Expedition Programming\dotNet\EC3Functions\EC3Functions\EC3Functions\bin\Release\EC3Functions.dll
+J:\Expedition Programming\dotNet\EC3Functions\EC3Functions\EC3Functions\bin\Release\EC3Functions.pdb
+J:\Expedition Programming\dotNet\EC3Functions\EC3Functions\EC3Functions\bin\Release\ExcelDna.Integration.dll
+J:\Expedition Programming\dotNet\EC3Functions\EC3Functions\EC3Functions\obj\Release\ResolveAssemblyReference.cache
+J:\Expedition Programming\dotNet\EC3Functions\EC3Functions\EC3Functions\obj\Release\EC3Functions.dll
+J:\Expedition Programming\dotNet\EC3Functions\EC3Functions\EC3Functions\obj\Release\EC3Functions.pdb
+O:\dotNet\EC3Functions\EC3Functions\EC3Functions\bin\Release\SSILibrary.dll
+O:\dotNet\EC3Functions\EC3Functions\EC3Functions\bin\Release\OpenNURBS.NET.dll
+J:\R&D\Expedition Programming\dotNet\EC3Functions\EC3Functions\EC3Functions\obj\Release\ResolveAssemblyReference.cache
+J:\R&D\Expedition Programming\dotNet\EC3Functions\EC3Functions\EC3Functions\obj\Release\EC3Functions.dll
+J:\R&D\Expedition Programming\dotNet\EC3Functions\EC3Functions\EC3Functions\obj\Release\EC3Functions.pdb
+J:\R&D\Expedition Programming\dotNet\EC3Functions\EC3Functions\EC3Functions\bin\Release\EC3Functions.dll
+J:\R&D\Expedition Programming\dotNet\EC3Functions\EC3Functions\EC3Functions\bin\Release\EC3Functions.pdb
+J:\R&D\Expedition Programming\dotNet\EC3Functions\EC3Functions\EC3Functions\bin\Release\SSILibrary.dll
+J:\R&D\Expedition Programming\dotNet\EC3Functions\EC3Functions\EC3Functions\bin\Release\OpenNURBS.NET.dll
+J:\R&D\Expedition Programming\dotNet\EC3Functions\EC3Functions\EC3Functions\bin\Release\ExcelDna.Integration.dll
