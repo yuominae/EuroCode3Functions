@@ -1,0 +1,8 @@
+C:\Users\RISE11-2\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\Tests\bin\Release\Tests.exe.config
+C:\Users\RISE11-2\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\Tests\bin\Release\Tests.exe
+C:\Users\RISE11-2\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\Tests\bin\Release\Tests.pdb
+C:\Users\RISE11-2\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\Tests\bin\Release\SectionCatalogue.dll
+C:\Users\RISE11-2\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\Tests\bin\Release\SectionCatalogue.pdb
+C:\Users\RISE11-2\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\Tests\obj\Release\Tests.csprojResolveAssemblyReference.cache
+C:\Users\RISE11-2\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\Tests\obj\Release\Tests.exe
+C:\Users\RISE11-2\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\Tests\obj\Release\Tests.pdb

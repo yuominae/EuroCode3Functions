@@ -1,0 +1,16 @@
+<DnaLibrary Name="FSharp Sample" Language="F#">
+<![CDATA[
+
+#light
+open ExcelDna.Integration
+let sayhello () = "Hello from F#"
+
+[<ExcelFunction(Category="FSharp Functions", Description="FSharp function to add numbers")>]
+let add x y = x + y
+ 
+let rec factorial = function 
+   | x when (x > 1.0) -> (floor x) * factorial (x - 1.0)
+   | _ -> 1.0
+
+]]>
+</DnaLibrary>

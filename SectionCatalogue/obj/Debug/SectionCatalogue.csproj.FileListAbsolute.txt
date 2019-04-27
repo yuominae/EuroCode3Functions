@@ -1,0 +1,9 @@
+C:/Users/RISE11-2/Documents/Visual Studio 2013/Projects/EC3Functions/EC3Functions/ec3functions/SectionCatalogue/obj/Debug/SectionCatalogue.csprojResolveAssemblyReference.cache
+/Users/davidallgayer/Documents/Code/DotNet/EuroCode3Functions/SectionCatalogue/bin/Debug/SectionCatalogue.dll
+/Users/davidallgayer/Documents/Code/DotNet/EuroCode3Functions/SectionCatalogue/bin/Debug/SectionCatalogue.pdb
+/Users/davidallgayer/Documents/Code/DotNet/EuroCode3Functions/SectionCatalogue/obj/Debug/SectionCatalogue.csprojAssemblyReference.cache
+/Users/davidallgayer/Documents/Code/DotNet/EuroCode3Functions/SectionCatalogue/obj/Debug/SectionCatalogue.UKSections.resources
+/Users/davidallgayer/Documents/Code/DotNet/EuroCode3Functions/SectionCatalogue/obj/Debug/SectionCatalogue.csproj.GenerateResource.cache
+/Users/davidallgayer/Documents/Code/DotNet/EuroCode3Functions/SectionCatalogue/obj/Debug/SectionCatalogue.csproj.CoreCompileInputs.cache
+/Users/davidallgayer/Documents/Code/DotNet/EuroCode3Functions/SectionCatalogue/obj/Debug/SectionCatalogue.dll
+/Users/davidallgayer/Documents/Code/DotNet/EuroCode3Functions/SectionCatalogue/obj/Debug/SectionCatalogue.pdb

@@ -1,4 +1,5 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -13,8 +14,9 @@
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <OldToolsVersion>2.0</OldToolsVersion>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,6 +26,8 @@
     <DefineConstants>TRACE;DEBUG;EXCELDNA, ExcelDNAExperimental</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,30 +36,36 @@
     <DefineConstants>TRACE;DEBUG;EXCELDNA, ExcelDNAExperimental</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ExcelDna.Integration, Version=0.20.3550.37573, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ExcelDna.Integration, Version=0.32.5236.31783, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ExcelDna\Distribution\ExcelDna.Integration.dll</HintPath>
-    </Reference>
-    <Reference Include="SSILibrary, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\SSI\SSILibrary.dll</HintPath>
+      <HintPath>..\packages\Excel-DNA.Lib.0.32.0\lib\ExcelDna.Integration.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\SectionCatalogue\SectionCatalogue\parseSect.cs">
-      <Link>parseSect.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\SectionCatalogue\SectionCatalogue\Sections1.cs">
-      <Link>Sections1.cs</Link>
-    </Compile>
-    <Compile Include="EC3Part1 Calculations.cs" />
-    <Compile Include="EC3Part1 Excel Interface.cs" />
+    <Compile Include="EC3Functions.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Exceptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SectionCatalogue\SectionCatalogue.csproj">
+      <Project>{819ceb22-3afc-47b1-857a-1d5697782088}</Project>
+      <Name>SectionCatalogue</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EC3Functions-AddIn.dna">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -66,9 +76,14 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>Copy "$(TargetPath)" "%25APPDATA%25\Microsoft\AddIns\$(ProjectName).dll"
-Copy "$(TargetDir)*.dll" "%25APPDATA%25\Microsoft\AddIns\"
+    <PostBuildEvent>REM Copy "$(TargetPath)" "%25APPDATA%25\Microsoft\AddIns\$(ProjectName).dll"
+REM Copy "$(TargetDir)*.dll" "%25APPDATA%25\Microsoft\AddIns\"
 
-</PostBuildEvent>
+
+xcopy "C:\Users\RISE11-2\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\packages\Excel-DNA.0.32.0\tools\ExcelDna.xll" "$(TargetDir)EC3Functions-AddIn.xll*" /C /Y
+xcopy "$(TargetDir)EC3Functions-AddIn.dna*" "$(TargetDir)EC3Functions-AddIn64.dna*" /C /Y
+xcopy "C:\Users\RISE11-2\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\packages\Excel-DNA.0.32.0\tools\ExcelDna64.xll" "$(TargetDir)EC3Functions-AddIn64.xll*" /C /Y
+"C:\Users\RISE11-2\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\packages\Excel-DNA.0.32.0\tools\ExcelDnaPack.exe" "$(TargetDir)EC3Functions-AddIn.dna" /Y
+"C:\Users\RISE11-2\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\packages\Excel-DNA.0.32.0\tools\ExcelDnaPack.exe" "$(TargetDir)EC3Functions-AddIn64.dna" /Y</PostBuildEvent>
   </PropertyGroup>
 </Project>
