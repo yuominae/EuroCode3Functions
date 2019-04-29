@@ -1,5 +1,4 @@
-﻿using System;
-namespace SectionCatalogue
+﻿namespace SectionCatalogue
 {
     public class Av
     {

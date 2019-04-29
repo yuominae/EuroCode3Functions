@@ -40,14 +40,12 @@
     <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ExcelDna.Integration, Version=0.32.5236.31783, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Excel-DNA.Lib.0.32.0\lib\ExcelDna.Integration.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="ExcelDna.Integration">
+      <HintPath>..\packages\ExcelDna.Integration.1.0.0\lib\ExcelDna.Integration.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EC3Functions.cs" />
@@ -65,7 +63,11 @@
     <Content Include="EC3Functions-AddIn.dna">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\ExcelDna.Build.props" />
+    <None Include="ExcelDna-Template.dna" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -86,4 +88,5 @@ xcopy "C:\Users\RISE11-2\Documents\Visual Studio 2013\Projects\EC3Functions\EC3F
 "C:\Users\RISE11-2\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\packages\Excel-DNA.0.32.0\tools\ExcelDnaPack.exe" "$(TargetDir)EC3Functions-AddIn.dna" /Y
 "C:\Users\RISE11-2\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\packages\Excel-DNA.0.32.0\tools\ExcelDnaPack.exe" "$(TargetDir)EC3Functions-AddIn64.dna" /Y</PostBuildEvent>
   </PropertyGroup>
+  <Import Project="..\packages\ExcelDna.AddIn.1.0.0\build\ExcelDna.AddIn.targets" Condition="Exists('..\packages\ExcelDna.AddIn.1.0.0\build\ExcelDna.AddIn.targets')" />
 </Project>

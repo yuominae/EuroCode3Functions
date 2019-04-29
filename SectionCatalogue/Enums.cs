@@ -1,28 +1,29 @@
 ﻿namespace SectionCatalogue
 {
-    public enum StructuralSectionsRegion
+    public enum Region
     {
+        OTHER,
         GB,
         EU,
         AU,
         JP,
-        US,
-        OTHER
+        US
     }
 
     public enum Symmetry
     {
-        ASYMMETRIC,
-        SINGLYSYMMETRIC,
-        DOUBLYSYMMETRIC
+        Asymmetric,
+        SinglySymmetric,
+        DoublySymmetric
     }
 
     public enum SectionFabrication
     {
-        ROLLED,
-        WELDED,
-        HOTFINISHED,
-        COLDFORMED
+        Other,
+        Rolled,
+        Welded,
+        HotFinished,
+        ColdFormed
     }
 
     public enum EN1993SteelGrade

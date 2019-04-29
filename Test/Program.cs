@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SectionCatalogue;
 
-using SectionCatalogue;
 namespace Test
 {
     class Program
     {
         static void Main(string[] args)
         {
-            StructuralSectionCatalogue catalogue = new StructuralSectionCatalogue();
+            SectionCatalogueFactory catalogue = new SectionCatalogueFactory();
         }
     }
 }

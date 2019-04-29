@@ -46,33 +46,34 @@
     <Compile Include="Enums.cs" />
     <Compile Include="parseGWA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SectionCatalogueFactory.cs" />
+    <Compile Include="SectionCollection.cs" />
+    <Compile Include="SectionProperties\AngleSection.cs" />
+    <Compile Include="SectionProperties\SectionBase.cs" />
+    <Compile Include="SectionProperties\StructChannelProperties.cs" />
+    <Compile Include="SectionProperties\CircularHollowSection.cs" />
+    <Compile Include="SectionProperties\StructCircProperties.cs" />
+    <Compile Include="SectionProperties\StructDiamProperties.cs" />
+    <Compile Include="SectionProperties\StructEllipseProperties.cs" />
+    <Compile Include="SectionProperties\StructINoWebProperties.cs" />
+    <Compile Include="SectionProperties\ISection.cs" />
+    <Compile Include="SectionProperties\StructRectCircProperties.cs" />
+    <Compile Include="SectionProperties\StructRectProperties.cs" />
+    <Compile Include="SectionProperties\RectangularHollowSection.cs" />
+    <Compile Include="SectionProperties\StructTapAngProperties.cs" />
+    <Compile Include="SectionProperties\StructTaperProperties.cs" />
+    <Compile Include="SectionProperties\StructTapIProperties.cs" />
+    <Compile Include="SectionProperties\StructTapTeeProperties.cs" />
+    <Compile Include="SectionProperties\StructUserProperties.cs" />
+    <Compile Include="SectionProperties\StructWeldedBoxNoWebsProperties.cs" />
+    <Compile Include="SectionProperties\StructWeldedBoxProperties.cs" />
     <Compile Include="SectionCatalogue.cs" />
-    <Compile Include="SectionTypeCollection.cs" />
-    <Compile Include="StructProperties\AngleSection.cs" />
-    <Compile Include="StructProperties\StructBaseProperties.cs" />
-    <Compile Include="StructProperties\StructChannelProperties.cs" />
-    <Compile Include="StructProperties\CircularHollowSection.cs" />
-    <Compile Include="StructProperties\StructCircProperties.cs" />
-    <Compile Include="StructProperties\StructDiamProperties.cs" />
-    <Compile Include="StructProperties\StructEllipseProperties.cs" />
-    <Compile Include="StructProperties\StructINoWebProperties.cs" />
-    <Compile Include="StructProperties\ISection.cs" />
-    <Compile Include="StructProperties\StructRectCircProperties.cs" />
-    <Compile Include="StructProperties\StructRectProperties.cs" />
-    <Compile Include="StructProperties\RectangularHollowSection.cs" />
-    <Compile Include="StructProperties\StructTapAngProperties.cs" />
-    <Compile Include="StructProperties\StructTaperProperties.cs" />
-    <Compile Include="StructProperties\StructTapIProperties.cs" />
-    <Compile Include="StructProperties\StructTapTeeProperties.cs" />
-    <Compile Include="StructProperties\StructUserProperties.cs" />
-    <Compile Include="StructProperties\StructWeldedBoxNoWebsProperties.cs" />
-    <Compile Include="StructProperties\StructWeldedBoxProperties.cs" />
-    <Compile Include="SectionRegionalCollection.cs" />
     <Compile Include="UKSections.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UKSections.resx</DependentUpon>
     </Compile>
+    <Compile Include="ISectionCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="UKSections.resx">

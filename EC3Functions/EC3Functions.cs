@@ -1,6 +1,6 @@
 ﻿using ExcelDna.Integration;
 using SectionCatalogue;
-using SectionCatalogue.StructProperties;
+using SectionCatalogue.SectionProperties;
 using System;
 namespace EC3Functions
 {
@@ -20,7 +20,7 @@ namespace EC3Functions
                 {
                     strCheckType = "CONSERVATIVE";
                 }
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
                 double num = double.Parse(SectionDesignStrength(SectionDenomination, SteelGrade).ToString());
                 if (CompClass < 0 || CompClass > 4)
                 {
@@ -28,7 +28,7 @@ namespace EC3Functions
                 }
                 if (CompClass == 0)
                 {
-                    CompClass = structBaseProperties.getEN1993CompressionClass(num);
+                    CompClass = structBaseProperties.GetEN1993CompressionClass(num);
                 }
                 if (CompClass == 4)
                 {
@@ -40,7 +40,7 @@ namespace EC3Functions
                 }
                 if (BendClass == 0)
                 {
-                    BendClass = structBaseProperties.getEN1993FlexureClass(num);
+                    BendClass = structBaseProperties.GetEN1993FlexureClass(num);
                 }
                 if (BendClass == 4)
                 {
@@ -406,9 +406,9 @@ namespace EC3Functions
         {
             return "Expedition EC3 functions version 1.31. Last updated 26/01/2008";
         }
-        private static StructBaseProperties RetrieveSectionProps(string Denomination)
+        private static SectionBase RetrieveSectionProps(string Denomination)
         {
-            StructBaseProperties structBaseProperties = parseGWA.parseGWASectStr(Denomination);
+            SectionBase structBaseProperties = parseGWA.parseGWASectStr(Denomination);
             if (structBaseProperties == null)
             {
                 throw new SectionNotFoundException();
@@ -871,19 +871,19 @@ namespace EC3Functions
             object result;
             try
             {
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
                 double fy = double.Parse(SectionDesignStrength(SectionDenomination, SteelGrade).ToString());
                 string a;
                 if ((a = ClassificationType.ToUpper()) != null)
                 {
                     if (a == "BENDING")
                     {
-                        result = structBaseProperties.getEN1993FlexureClass(fy);
+                        result = structBaseProperties.GetEN1993FlexureClass(fy);
                         return result;
                     }
                     if (a == "COMPRESSION")
                     {
-                        result = structBaseProperties.getEN1993CompressionClass(fy);
+                        result = structBaseProperties.GetEN1993CompressionClass(fy);
                         return result;
                     }
                 }
@@ -901,7 +901,7 @@ namespace EC3Functions
             object result;
             try
             {
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
                 double[] array = new double[]
 				{
 					structBaseProperties.A * 1000000.0,
@@ -990,7 +990,7 @@ namespace EC3Functions
                     }
                 }
                 double num = double.Parse(SectionDesignStrength(SectionDenomination, SteelGrade).ToString());
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
                 double num2 = structBaseProperties.A * 1000000.0;
                 double num3 = num2 * num / GammaM0;
                 if (AreaRed < 1.0)
@@ -1011,7 +1011,7 @@ namespace EC3Functions
             object result;
             try
             {
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
                 if (GammaM0 == 0.0)
                 {
                     GammaM0 = 1.0;
@@ -1027,7 +1027,7 @@ namespace EC3Functions
                 }
                 if (CompClass == 0)
                 {
-                    CompClass = structBaseProperties.getEN1993CompressionClass(num);
+                    CompClass = structBaseProperties.GetEN1993CompressionClass(num);
                 }
                 if (CompClass == 4)
                 {
@@ -1053,14 +1053,14 @@ namespace EC3Functions
                 {
                     GammaM0 = 1.0;
                 }
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
                 if (BendClass < 0 || BendClass > 4)
                 {
                     throw new InvalidSectionClassException();
                 }
                 if (BendClass == 0)
                 {
-                    BendClass = structBaseProperties.getEN1993FlexureClass(num);
+                    BendClass = structBaseProperties.GetEN1993FlexureClass(num);
                 }
                 if (BendClass == 4)
                 {
@@ -1273,7 +1273,7 @@ namespace EC3Functions
             object result;
             try
             {
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
                 if (GammaM0 == 0.0)
                 {
                     GammaM0 = 1.0;
@@ -1284,13 +1284,13 @@ namespace EC3Functions
                 {
                     case ShearAxis.Y:
                         {
-                            double num2 = structBaseProperties.getEN1993ShearArea(fy).Avzz * 1000000.0;
+                            double num2 = structBaseProperties.GetEN1993ShearArea(fy).Avzz * 1000000.0;
                             result = num2 * (num / Math.Sqrt(3.0)) / GammaM0 / 1000.0;
                             break;
                         }
                     case ShearAxis.Z:
                         {
-                            double num2 = structBaseProperties.getEN1993ShearArea(fy).Avyy * 1000000.0;
+                            double num2 = structBaseProperties.GetEN1993ShearArea(fy).Avyy * 1000000.0;
                             result = num2 * (num / Math.Sqrt(3.0)) / GammaM0 / 1000.0;
                             break;
                         }
@@ -1335,9 +1335,9 @@ namespace EC3Functions
             object result;
             try
             {
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
                 EN1993SteelGrade grade = (EN1993SteelGrade)Enum.Parse(typeof(EN1993SteelGrade), SteelGrade.ToUpper());
-                EN1993CompressionBucklingCurve eN1993CompressionBucklingCurves = structBaseProperties.getEN1993CompressionBucklingCurves(grade);
+                EN1993CompressionBucklingCurve eN1993CompressionBucklingCurves = structBaseProperties.GetEN1993CompressionBucklingCurves(grade);
                 switch ((BendingAxis)Enum.Parse(typeof(BendingAxis), Axis.ToUpper()))
                 {
                     case BendingAxis.YY:
@@ -1402,7 +1402,7 @@ namespace EC3Functions
                     E = 210000.0;
                 }
                 Lcr *= 1000.0;
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
                 switch ((BendingAxis)Enum.Parse(typeof(BendingAxis), Axis.ToUpper()))
                 {
                     case BendingAxis.YY:
@@ -1437,7 +1437,7 @@ namespace EC3Functions
                 {
                     E = 210000.0;
                 }
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
                 double num = double.Parse(SectionDesignStrength(SectionDenomination, SteelGrade).ToString());
                 double num2 = double.Parse(CompressionBucklingCriticalElasticForce(SectionDenomination, Lcr, Axis, E).ToString()) * 1000.0;
                 if (CompClass < 0 || CompClass > 4)
@@ -1446,7 +1446,7 @@ namespace EC3Functions
                 }
                 if (CompClass == 0)
                 {
-                    CompClass = structBaseProperties.getEN1993CompressionClass(num);
+                    CompClass = structBaseProperties.GetEN1993CompressionClass(num);
                 }
                 if (CompClass == 4)
                 {
@@ -1503,7 +1503,7 @@ namespace EC3Functions
                 {
                     GammaM1 = 1.0;
                 }
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
                 double num = double.Parse(SectionDesignStrength(SectionDenomination, SteelGrade).ToString());
                 double num2 = double.Parse(CompressionBucklingReductionFactor(SectionDenomination, SteelGrade, Axis, Lcr, E, CompClass).ToString());
                 result = num2 * structBaseProperties.A * 1000000.0 * num / GammaM1 / 1000.0;
@@ -1520,8 +1520,8 @@ namespace EC3Functions
             object result;
             try
             {
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
-                EN1993LTBBucklingCurve eN1993LTBBucklingCurve = structBaseProperties.getEN1993LTBBucklingCurve();
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                EN1993LTBBucklingCurve eN1993LTBBucklingCurve = structBaseProperties.GetEN1993LTBBucklingCurve();
                 result = eN1993LTBBucklingCurve.LTBBucklingCurve.ToString();
             }
             catch (Exception ex)
@@ -1577,8 +1577,8 @@ namespace EC3Functions
                     nu = 0.297;
                 }
                 Lcr *= 1000.0;
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
-                if (structBaseProperties.Symmetry != Symmetry.DOUBLYSYMMETRIC)
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                if (structBaseProperties.Symmetry != Symmetry.DoublySymmetric)
                 {
                     throw new GeneralException("Section is not doubly-symmetric");
                 }
@@ -1612,8 +1612,8 @@ namespace EC3Functions
                 }
                 double fy = double.Parse(YieldStrength(SteelGrade).ToString());
                 double num = double.Parse(SectionDesignStrength(SectionDenomination, SteelGrade).ToString());
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
-                if (structBaseProperties.Symmetry != Symmetry.DOUBLYSYMMETRIC)
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                if (structBaseProperties.Symmetry != Symmetry.DoublySymmetric)
                 {
                     throw new GeneralException("Section not doubly-symmetric");
                 }
@@ -1623,7 +1623,7 @@ namespace EC3Functions
                 }
                 if (BendClass == 0)
                 {
-                    BendClass = structBaseProperties.getEN1993FlexureClass(fy);
+                    BendClass = structBaseProperties.GetEN1993FlexureClass(fy);
                 }
                 if (BendClass == 4)
                 {
@@ -1661,8 +1661,8 @@ namespace EC3Functions
                 {
                     nu = 0.297;
                 }
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
-                if (structBaseProperties.Symmetry != Symmetry.DOUBLYSYMMETRIC)
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                if (structBaseProperties.Symmetry != Symmetry.DoublySymmetric)
                 {
                     throw new GeneralException("Section not doubly-symmetric");
                 }
@@ -1705,8 +1705,8 @@ namespace EC3Functions
                 }
                 double fy = double.Parse(YieldStrength(SteelGrade).ToString());
                 double num = double.Parse(SectionDesignStrength(SectionDenomination, SteelGrade).ToString());
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
-                if (structBaseProperties.Symmetry != Symmetry.DOUBLYSYMMETRIC)
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                if (structBaseProperties.Symmetry != Symmetry.DoublySymmetric)
                 {
                     throw new GeneralException("Section not doubly-symmetric");
                 }
@@ -1716,7 +1716,7 @@ namespace EC3Functions
                 }
                 if (BendClass == 0)
                 {
-                    BendClass = structBaseProperties.getEN1993FlexureClass(fy);
+                    BendClass = structBaseProperties.GetEN1993FlexureClass(fy);
                 }
                 if (BendClass == 4)
                 {
@@ -1743,7 +1743,7 @@ namespace EC3Functions
             try
             {
                 SectionTypes sectionType = DetermineType(SectionDenomination);
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
                 if (GammaM0 == 0.0)
                 {
                     GammaM0 = 1.0;
@@ -1759,7 +1759,7 @@ namespace EC3Functions
                 }
                 if (CompClass == 0)
                 {
-                    CompClass = structBaseProperties.getEN1993CompressionClass(fy);
+                    CompClass = structBaseProperties.GetEN1993CompressionClass(fy);
                 }
                 if (CompClass == 4)
                 {
@@ -1771,7 +1771,7 @@ namespace EC3Functions
                 }
                 if (BendClass == 0)
                 {
-                    BendClass = structBaseProperties.getEN1993FlexureClass(fy);
+                    BendClass = structBaseProperties.GetEN1993FlexureClass(fy);
                 }
                 if (BendClass == 4)
                 {
@@ -1809,10 +1809,10 @@ namespace EC3Functions
                         double num5 = 0.2 * Math.Sqrt(C1) * Math.Pow((1.0 - NEd / num3) * (1.0 - NEd / num4), 0.0);
                         if (num5 < num2)
                         {
-                            result = double.Parse(FactorKzyTorsion_AppBB(NEd, num, CmLT, lambdaBarZ, GammaM1, structBaseProperties.getEN1993FlexureClass(fy)).ToString());
+                            result = double.Parse(FactorKzyTorsion_AppBB(NEd, num, CmLT, lambdaBarZ, GammaM1, structBaseProperties.GetEN1993FlexureClass(fy)).ToString());
                             return result;
                         }
-                        result = double.Parse(FactorKzy_AppBB(NEd, num, CmY, lambdaBarY, GammaM1, structBaseProperties.getEN1993FlexureClass(fy)).ToString());
+                        result = double.Parse(FactorKzy_AppBB(NEd, num, CmY, lambdaBarY, GammaM1, structBaseProperties.GetEN1993FlexureClass(fy)).ToString());
                         return result;
                     }
                 }
@@ -1931,7 +1931,7 @@ namespace EC3Functions
             try
             {
                 SectionTypes sectionType = DetermineType(SectionDenomination);
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
                 if (GammaM0 == 0.0)
                 {
                     GammaM0 = 1.0;
@@ -1947,7 +1947,7 @@ namespace EC3Functions
                 }
                 if (CompClass == 0)
                 {
-                    CompClass = structBaseProperties.getEN1993CompressionClass(fy);
+                    CompClass = structBaseProperties.GetEN1993CompressionClass(fy);
                 }
                 if (CompClass == 4)
                 {
@@ -1959,7 +1959,7 @@ namespace EC3Functions
                 }
                 if (BendClass == 0)
                 {
-                    BendClass = structBaseProperties.getEN1993FlexureClass(fy);
+                    BendClass = structBaseProperties.GetEN1993FlexureClass(fy);
                 }
                 if (BendClass == 4)
                 {
@@ -1978,10 +1978,10 @@ namespace EC3Functions
                 double num9 = double.Parse(CompressionBucklingCriticalElasticForce(SectionDenomination, LcrZ, "ZZ", E).ToString());
                 double num10 = double.Parse(TorsionFlexuralBucklingCriticalElasticForce(SectionDenomination, LcrZ, LcrLT, E, nu, "ZZ").ToString());
                 double num11 = 0.2 * Math.Sqrt(C1) * Math.Pow((1.0 - NEd / num9) * (1.0 - NEd / num10), 0.0);
-                double num12 = double.Parse(FactorKzy_AppBB(NEd, num, CmY, lambdaBarY, GammaM1, structBaseProperties.getEN1993FlexureClass(fy)).ToString());
+                double num12 = double.Parse(FactorKzy_AppBB(NEd, num, CmY, lambdaBarY, GammaM1, structBaseProperties.GetEN1993FlexureClass(fy)).ToString());
                 if (num11 < num5)
                 {
-                    num12 = double.Parse(FactorKzyTorsion_AppBB(NEd, num, CmLT, lambdaBarZ, GammaM1, structBaseProperties.getEN1993FlexureClass(fy)).ToString());
+                    num12 = double.Parse(FactorKzyTorsion_AppBB(NEd, num, CmLT, lambdaBarZ, GammaM1, structBaseProperties.GetEN1993FlexureClass(fy)).ToString());
                 }
                 if (Check1Or2 == 1)
                 {
@@ -2005,8 +2005,8 @@ namespace EC3Functions
             try
             {
                 LcrT *= 1000.0;
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
-                if (structBaseProperties.Symmetry != Symmetry.DOUBLYSYMMETRIC)
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                if (structBaseProperties.Symmetry != Symmetry.DoublySymmetric)
                 {
                     throw new GeneralException("Section not doubly-symmetric");
                 }
@@ -2031,8 +2031,8 @@ namespace EC3Functions
             object result;
             try
             {
-                StructBaseProperties structBaseProperties = RetrieveSectionProps(SectionDenomination);
-                if (structBaseProperties.Symmetry != Symmetry.DOUBLYSYMMETRIC)
+                SectionBase structBaseProperties = RetrieveSectionProps(SectionDenomination);
+                if (structBaseProperties.Symmetry != Symmetry.DoublySymmetric)
                 {
                     throw new GeneralException("Section not doubly-symmetric");
                 }

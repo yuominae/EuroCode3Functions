@@ -1,15 +1,15 @@
-﻿using SectionCatalogue.StructProperties;
+﻿using SectionCatalogue.SectionProperties;
 using System;
 namespace SectionCatalogue
 {
     public static class parseGWA
     {
-        private static StructuralSectionCatalogue catalogue;
+        private static SectionCatalogueFactory catalogue;
         static parseGWA()
         {
-            parseGWA.catalogue = new StructuralSectionCatalogue();
+            parseGWA.catalogue = new SectionCatalogueFactory();
         }
-        public static StructBaseProperties parseGWASectStr(string GWADef)
+        public static SectionBase parseGWASectStr(string GWADef)
         {
             string[] array = GWADef.Split("% ".ToCharArray());
             double num = 0.001;
@@ -22,7 +22,7 @@ namespace SectionCatalogue
                     num2++;
                 }
                 string type = GWADef.Substring(0, num2);
-                return parseGWA.catalogue.getCatProperties(type, GWADef);
+                return parseGWA.catalogue.GetCatProperties(type, GWADef);
             }
             if (array[1].IndexOf("(m)", StringComparison.CurrentCultureIgnoreCase) >= 0)
             {
@@ -157,7 +157,7 @@ namespace SectionCatalogue
             }
             if (string.Compare("CAT", array[0], true) == 0)
             {
-                return parseGWA.catalogue.getCatProperties(array[1], array[2]);
+                return parseGWA.catalogue.GetCatProperties(array[1], array[2]);
             }
             if (string.Compare("GEO", array[0], true) == 0)
             {

@@ -1,5 +1,4 @@
-﻿using System;
-namespace SectionCatalogue
+﻿namespace SectionCatalogue
 {
     public enum EN1993LTBBucklingCurves
     {
@@ -11,11 +10,6 @@ namespace SectionCatalogue
 
     public class EN1993LTBBucklingCurve
     {
-        public EN1993LTBBucklingCurves LTBBucklingCurve { get; set; } 
-        
-        public EN1993LTBBucklingCurve()
-        {
-            this.LTBBucklingCurve = EN1993LTBBucklingCurves.d;
-        }
+        public EN1993LTBBucklingCurves LTBBucklingCurve { get; set; } = EN1993LTBBucklingCurves.d;
     }
 }

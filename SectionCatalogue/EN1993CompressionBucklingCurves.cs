@@ -12,15 +12,8 @@ namespace SectionCatalogue
 
     public class EN1993CompressionBucklingCurve
     {
-        public EN1993CompressionBucklingCurves majorAxis  { get; set; } 
+        public EN1993CompressionBucklingCurves majorAxis  { get; set; } = EN1993CompressionBucklingCurves.d;
 
-        public EN1993CompressionBucklingCurves minorAxis  { get; set; }
-
-        public EN1993CompressionBucklingCurve()
-        {
-            this.majorAxis = EN1993CompressionBucklingCurves.d;
-
-            this.minorAxis = EN1993CompressionBucklingCurves.d;
-        }
+        public EN1993CompressionBucklingCurves minorAxis  { get; set; } = EN1993CompressionBucklingCurves.d;
     }
 }
