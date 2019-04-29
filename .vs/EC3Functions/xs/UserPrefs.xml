@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{4CFC2FF2-7103-405E-9372-D53E6BD9CFDA}|Default">
   <MonoDevelop.Ide.ItemProperties.Test PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SectionCatalogue/EN1993LTBBucklingCurve.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SectionCatalogue/SectionCatalogueFactory.cs">
     <Files>
-      <File FileName="SectionCatalogue/Enums.cs" Line="5" Column="12" />
-      <File FileName="SectionCatalogue/SectionCatalogueFactory.cs" Line="7478" Column="16" />
-      <File FileName="SectionCatalogue/SectionCatalogue.cs" Line="13" Column="34" />
+      <File FileName="SectionCatalogue/Enums.cs" Line="29" Column="33" />
+      <File FileName="SectionCatalogue/SectionCatalogueFactory.cs" Line="7411" Column="94" />
+      <File FileName="SectionCatalogue/SectionCatalogue.cs" Line="33" Column="10" />
       <File FileName="SectionCatalogue/SectionProperties/SectionBase.cs" Line="12" Column="48" />
       <File FileName="EC3Functions/EC3Functions.cs" Line="20" Column="18" />
       <File FileName="SectionCatalogue/SectionProperties/AngleSection.cs" Line="51" Column="52" />
@@ -14,19 +14,18 @@
       <File FileName="SectionCatalogue/Av.cs" Line="1" Column="1" />
       <File FileName="packages/ExcelDna.AddIn.1.0.0/readme.txt" Line="1" Column="1" />
       <File FileName="SectionCatalogue/EN1993CompressionBucklingCurves.cs" Line="6" Column="12" />
-      <File FileName="SectionCatalogue/EN1993LTBBucklingCurve.cs" Line="20" Column="2" />
+      <File FileName="SectionCatalogue/EN1993LTBBucklingCurve.cs" Line="16" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="EC3Functions" expanded="True">
+          <Node name="EC3Functions" expanded="True" selected="True">
             <Node name="EC3Functions" expanded="True">
               <Node name="References" expanded="True" />
               <Node name="Packages" expanded="True" />
             </Node>
             <Node name="SectionCatalogue" expanded="True">
               <Node name="SectionProperties" expanded="True" />
-              <Node name="EN1993LTBBucklingCurve.cs" selected="True" />
             </Node>
             <Node name="Test" expanded="True" />
           </Node>
@@ -40,4 +39,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
+  <AuthorInfo Name="David Allgayer" Email="" Copyright="David Allgayer" Company="" Trademark="" />
 </Properties>
