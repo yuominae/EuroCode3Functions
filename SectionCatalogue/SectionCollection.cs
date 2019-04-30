@@ -31,7 +31,8 @@ namespace SectionCatalogue
             this.sections.Add(sectionDenomination, Section);
         }
 
-        public T GetSection<T>(string sectionDenomination) where T : SectionBase
+        public T GetSection<T>(string sectionDenomination)
+            where T : SectionBase
         {
             return (T)this.sections[sectionDenomination.ToLower()];
         }

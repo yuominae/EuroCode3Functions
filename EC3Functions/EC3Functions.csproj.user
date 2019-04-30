@@ -9,7 +9,8 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <StartWorkingDirectory>J:\R&amp;D\Expedition Programming\dotNet\EC3Functions\EC3Functions\EC3Functions\bin\Debug</StartWorkingDirectory>
-    <StartArguments>
-    </StartArguments>
+    <StartArguments>"EC3Functions-AddIn.xll"</StartArguments>
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Program Files %28x86%29\Microsoft Office\Office16\EXCEL.EXE</StartProgram>
   </PropertyGroup>
 </Project>

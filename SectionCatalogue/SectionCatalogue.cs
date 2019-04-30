@@ -32,7 +32,13 @@ namespace SectionCatalogue
             return this.sectionCollections[sectionDenomination];
         }
 
-        internal T GetSection<T>(string SectionType, string SectionDenomination) where T : SectionBase
+        public SectionBase GetSection(string SectionType, string SectionDenomination)
+        {
+            return this.GetSection<SectionBase>(SectionType, SectionDenomination);
+        }
+
+        public T GetSection<T>(string SectionType, string SectionDenomination) 
+            where T : SectionBase
         {
             return this.GetSectionCollection(SectionType).GetSection<T>(SectionDenomination);
         }
