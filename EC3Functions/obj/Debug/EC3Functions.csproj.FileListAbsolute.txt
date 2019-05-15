@@ -45,3 +45,4 @@ C:/Users/RISE11-2/Documents/Visual Studio 2013/Projects/EC3Functions/EC3Function
 /Users/davidallgayer/Documents/Code/DotNet/EuroCode3Functions/EC3Functions/obj/Debug/EC3Functions.csproj.CopyComplete
 /Users/davidallgayer/Documents/Code/DotNet/EuroCode3Functions/EC3Functions/obj/Debug/EC3Functions.dll
 /Users/davidallgayer/Documents/Code/DotNet/EuroCode3Functions/EC3Functions/obj/Debug/EC3Functions.pdb
+/Users/davidallgayer/Documents/Code/DotNet/EuroCode3Functions/EC3Functions/bin/Debug/ExcelDna.Integration.dll

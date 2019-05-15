@@ -9,7 +9,7 @@ namespace SectionCatalogue.SectionProperties
 
         public double t { get; set; }
 
-        public SectionFabrication fabrication { get; set; }
+        public SectionFabrication Fabrication { get; set; }
 
         public override Symmetry Symmetry
         {
@@ -106,7 +106,7 @@ namespace SectionCatalogue.SectionProperties
         public override EN1993CompressionBucklingCurve GetEN1993CompressionBucklingCurves(EN1993SteelGrade grade)
         {
             EN1993CompressionBucklingCurve eN1993CompressionBucklingCurves = new EN1993CompressionBucklingCurve();
-            if (this.fabrication == SectionFabrication.ColdFormed)
+            if (this.Fabrication == SectionFabrication.ColdFormed)
             {
                 eN1993CompressionBucklingCurves.majorAxis = EN1993CompressionBucklingCurves.c;
                 eN1993CompressionBucklingCurves.minorAxis = eN1993CompressionBucklingCurves.majorAxis;
@@ -133,13 +133,13 @@ namespace SectionCatalogue.SectionProperties
         {
             Av av = new Av();
 
-            if (this.fabrication == SectionFabrication.Rolled)
+            if (this.Fabrication == SectionFabrication.Rolled)
             {
                 av.Avyy = this.A * this.h / (this.b + this.h);
                 av.Avzz = this.A * this.b / (this.b + this.h);
                 return av;
             }
-            if (this.fabrication == SectionFabrication.Welded)
+            if (this.Fabrication == SectionFabrication.Welded)
             {
                 av.Avyy = this.A - 2.0 * this.h * this.t;
                 double num = 1.2;

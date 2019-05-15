@@ -13,7 +13,7 @@ namespace SectionCatalogue
             this.Region = region;
         }
 
-        public readonly Region Region;
+        public Region Region { get; }
 
         public void AddSectionCollection(SectionCollection sectionCollection)
         {
@@ -27,14 +27,9 @@ namespace SectionCatalogue
             this.sectionCollections.Add(sectionCollectionDenomination, sectionCollection);
         }
 
-        public SectionCollection GetSectionCollection(string sectionDenomination)
+        public SectionCollection GetSectionCollection(string sectionCollectionDenomination)
         {
-            return this.sectionCollections[sectionDenomination];
-        }
-
-        internal T GetSection<T>(string SectionType, string SectionDenomination) where T : SectionBase
-        {
-            return this.GetSectionCollection(SectionType).GetSection<T>(SectionDenomination);
+            return this.sectionCollections[sectionCollectionDenomination];
         }
     }
 }

@@ -22,7 +22,7 @@ namespace SectionCatalogue
                     num2++;
                 }
                 string type = GWADef.Substring(0, num2);
-                return parseGWA.catalogue.GetCatProperties(type, GWADef);
+                return parseGWA.catalogue.GetSection(type, GWADef);
             }
             if (array[1].IndexOf("(m)", StringComparison.CurrentCultureIgnoreCase) >= 0)
             {
@@ -157,7 +157,7 @@ namespace SectionCatalogue
             }
             if (string.Compare("CAT", array[0], true) == 0)
             {
-                return parseGWA.catalogue.GetCatProperties(array[1], array[2]);
+                return parseGWA.catalogue.GetSection(array[1], array[2]);
             }
             if (string.Compare("GEO", array[0], true) == 0)
             {

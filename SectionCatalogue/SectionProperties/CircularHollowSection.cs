@@ -7,7 +7,7 @@ namespace SectionCatalogue.SectionProperties
 
         public double t { get; set; }
 
-        public SectionFabrication fabrication = SectionFabrication.HotFinished;
+        public SectionFabrication Fabrication = SectionFabrication.HotFinished;
 
         public override Symmetry Symmetry
         {
@@ -78,7 +78,7 @@ namespace SectionCatalogue.SectionProperties
         public override EN1993CompressionBucklingCurve GetEN1993CompressionBucklingCurves(EN1993SteelGrade grade)
         {
             EN1993CompressionBucklingCurve eN1993CompressionBucklingCurves = new EN1993CompressionBucklingCurve();
-            if (this.fabrication == SectionFabrication.ColdFormed)
+            if (this.Fabrication == SectionFabrication.ColdFormed)
             {
                 eN1993CompressionBucklingCurves.majorAxis = EN1993CompressionBucklingCurves.c;
                 eN1993CompressionBucklingCurves.minorAxis = eN1993CompressionBucklingCurves.majorAxis;

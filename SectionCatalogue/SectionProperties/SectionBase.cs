@@ -43,9 +43,6 @@ namespace SectionCatalogue.SectionProperties
 
         public virtual Av GetEN1993ShearArea(double fy) => throw new NotImplementedException();
 
-        protected internal double CalcEpsilon(double fy)
-        {
-            return Math.Sqrt(235.0 / fy);
-        }
+        protected internal double CalcEpsilon(double fy) => Math.Sqrt(235.0 / fy);
     }
 }

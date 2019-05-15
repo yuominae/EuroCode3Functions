@@ -37,23 +37,22 @@ namespace SectionCatalogue
 
     public class SectionCatalogueFactory
     {
-        public List<SectionCatalogue> catalogue;
+        public List<SectionCatalogue> SectionCatalogues;
 
         public SectionCatalogueFactory()
         {
             string[][] array;
             string[][] array2;
-            SectionCollection structPropCollection;
 
-            ArrayList arrayList = new ArrayList();
+            var sectionCatalogues = new List<SectionCatalogue>();
 
             // Initialise UK sections
-            SectionCatalogue structRegCollection = new SectionCatalogue(Region.GB);
-            this.InitialiseUKSections(structRegCollection);
-            arrayList.Add(structRegCollection);
+            var structRegCollection = this.InitialiseUKSectionCatalogue();
+
+            sectionCatalogues.Add(structRegCollection);
 
             SectionCatalogue structRegCollection2 = new SectionCatalogue(Region.EU);
-            arrayList.Add(structRegCollection2);
+            sectionCatalogues.Add(structRegCollection2);
             
             array = new string[][]
 			{
@@ -939,7 +938,7 @@ namespace SectionCatalogue
                 string[] strDef3 = array2[i];
                 structPropCollection6.AddSection(new ISection(strDef3)
                 {
-                    fabrication = SectionFabrication.Rolled
+                    Fabrication = SectionFabrication.Rolled
                 });
             }
             structRegCollection2.AddSectionCollection(structPropCollection6);
@@ -3529,7 +3528,7 @@ namespace SectionCatalogue
                 string[] strDef4 = array2[i];
                 structPropCollection7.AddSection(new ISection(strDef4)
                 {
-                    fabrication = SectionFabrication.Rolled
+                    Fabrication = SectionFabrication.Rolled
                 });
             }
             structRegCollection2.AddSectionCollection(structPropCollection7);
@@ -4187,7 +4186,7 @@ namespace SectionCatalogue
                 string[] strDef5 = array2[i];
                 structPropCollection8.AddSection(new ISection(strDef5)
                 {
-                    fabrication = SectionFabrication.Rolled
+                    Fabrication = SectionFabrication.Rolled
                 });
             }
             structRegCollection2.AddSectionCollection(structPropCollection8);
@@ -5420,12 +5419,12 @@ namespace SectionCatalogue
                 string[] strDef6 = array2[i];
                 structPropCollection9.AddSection(new ISection(strDef6)
                 {
-                    fabrication = SectionFabrication.Rolled
+                    Fabrication = SectionFabrication.Rolled
                 });
             }
             structRegCollection2.AddSectionCollection(structPropCollection9);
             SectionCatalogue structRegCollection3 = new SectionCatalogue(Region.AU);
-            arrayList.Add(structRegCollection3);
+            sectionCatalogues.Add(structRegCollection3);
             array = new string[][]
 			{
 				new string[]
@@ -6080,7 +6079,7 @@ namespace SectionCatalogue
                 string[] strDef7 = array2[i];
                 structPropCollection10.AddSection(new ISection(strDef7)
                 {
-                    fabrication = SectionFabrication.Rolled
+                    Fabrication = SectionFabrication.Rolled
                 });
             }
             structRegCollection3.AddSectionCollection(structPropCollection10);
@@ -6393,7 +6392,7 @@ namespace SectionCatalogue
                 string[] strDef8 = array2[i];
                 structPropCollection11.AddSection(new ISection(strDef8)
                 {
-                    fabrication = SectionFabrication.Rolled
+                    Fabrication = SectionFabrication.Rolled
                 });
             }
             structRegCollection3.AddSectionCollection(structPropCollection11);
@@ -7339,37 +7338,12 @@ namespace SectionCatalogue
                 structPropCollection13.AddSection(new ISection(strDef10));
             }
             structRegCollection3.AddSectionCollection(structPropCollection13);
-            this.catalogue = arrayList.Cast<SectionCatalogue>().ToList();
+            this.SectionCatalogues = sectionCatalogues.Cast<SectionCatalogue>().ToList();
         }
 
-        public SectionCatalogue GetRegCollection(Region Region)
-        {
-            List<SectionCatalogue> array = this.catalogue;
-            for (int i = 0; i < array.Count; i++)
-            {
-                SectionCatalogue structRegCollection = array[i];
-                if (structRegCollection.Region == Region)
-                {
-                    return structRegCollection;
-                }
-            }
-            return null;
-        }
+        public SectionCatalogue GetSectionCatalogueByRegion(Region region) => this.SectionCatalogues.FirstOrDefault(c => c.Region == region);
 
-        public SectionBase GetCatProperties(string denomination)
-        {
-            int num = 0;
-
-            int num2;
-            while (num < denomination.Length && !int.TryParse(denomination[num].ToString(), out num2))
-            {
-                num++;
-            }
-
-            return this.GetCatProperties(denomination.Substring(0, num), denomination);
-        }
-
-        public SectionBase GetCatProperties(string type, string denomination)
+        public SectionBase GetSection(string type, string denomination)
         {
             var region = Region.OTHER;
 
@@ -7390,77 +7364,40 @@ namespace SectionCatalogue
 
             if (region != Region.OTHER)
             {
-                var regCollection = this.GetRegCollection(region);
+                var sectionCatalogue = this.GetSectionCatalogueByRegion(region);
 
-                return regCollection.GetSection(type, denomination);
+                return sectionCatalogue.GetSectionCollection(type).GetSection(denomination);
             }
-            else
-                return null;
+
+            return null;
         }
 
-        /// <summary>
-        ///  Ininitialise the catalogue of British sections
-        /// </summary>
-        /// <param name="regionalSectionsCatalogue"></param>
-        private void InitialiseUKSections(SectionCatalogue regionalSectionsCatalogue)
+        private SectionCatalogue InitialiseUKSectionCatalogue()
         {
-            SectionCollection structPropCollection;
+            var sectionCatalogue = new SectionCatalogue(Region.GB);
 
             // UB sections
-            structPropCollection = new SectionCollection("Universal Beams", "UB");
-            this.ParseSectionResourceFile(UKSections.UB).ForEach(o => structPropCollection.AddSection(new ISection(o)
-            {
-                fabrication = SectionFabrication.Rolled
-            }));
-            regionalSectionsCatalogue.AddSectionCollection(structPropCollection);
-            
+            sectionCatalogue.AddSectionCollection(this.CreateSectionCollection("Universal Beams", "UB", UKSections.UB, s => new ISection(s) { Fabrication = SectionFabrication.Rolled }));
+
             // UC sections
-            structPropCollection = new SectionCollection("Universal Columns", "UC");
-            this.ParseSectionResourceFile(UKSections.UC).ForEach(o => structPropCollection.AddSection(new ISection(o)
-            {
-                fabrication = SectionFabrication.Rolled
-            }));
-            regionalSectionsCatalogue.AddSectionCollection(structPropCollection);
+            sectionCatalogue.AddSectionCollection(this.CreateSectionCollection("Universal Columns", "UC", UKSections.UC, s => new ISection(s) { Fabrication = SectionFabrication.Rolled }));
 
             // UBP sections
-            structPropCollection = new SectionCollection("Universal Bearing Piles", "UBP");
-            this.ParseSectionResourceFile(UKSections.UBP).ForEach(o => structPropCollection.AddSection(new ISection(o)
-            {
-                fabrication = SectionFabrication.Rolled
-            }));
-            regionalSectionsCatalogue.AddSectionCollection(structPropCollection);
+            sectionCatalogue.AddSectionCollection(this.CreateSectionCollection("Universal Bearing Piles", "UBP", UKSections.UBP, s => new ISection(s) { Fabrication = SectionFabrication.Rolled }));
 
             // CHS sections
-            structPropCollection = new SectionCollection("Circular Hollow Sections", "CHS");
-            this.ParseSectionResourceFile(UKSections.CHS).ForEach(o => structPropCollection.AddSection(new CircularHollowSection(o)
-            {
-                fabrication = SectionFabrication.HotFinished
-            }));
-            regionalSectionsCatalogue.AddSectionCollection(structPropCollection);
+            sectionCatalogue.AddSectionCollection(this.CreateSectionCollection("Circular Hollow Sections", "CHS", UKSections.CHS, s => new CircularHollowSection(s) { Fabrication = SectionFabrication.HotFinished }));
 
             // SHS
-            structPropCollection = new SectionCollection("Square Hollow Sections", "SHS");
-            this.ParseSectionResourceFile(UKSections.SHS).ForEach(o => structPropCollection.AddSection(new RectangularHollowSection(o)
-            {
-                fabrication = SectionFabrication.HotFinished
-            }));
-            regionalSectionsCatalogue.AddSectionCollection(structPropCollection);
+            sectionCatalogue.AddSectionCollection(this.CreateSectionCollection("Square Hollow Sections", "SHS", UKSections.SHS, s => new RectangularHollowSection(s) { Fabrication = SectionFabrication.HotFinished }));
 
             // RHS
-            structPropCollection = new SectionCollection("Rectangular Hollow Sections", "RHS");
-            this.ParseSectionResourceFile(UKSections.RHS).ForEach(o => structPropCollection.AddSection(new RectangularHollowSection(o)
-            {
-                fabrication = SectionFabrication.HotFinished
-            }));
-            regionalSectionsCatalogue.AddSectionCollection(structPropCollection);
+            sectionCatalogue.AddSectionCollection(this.CreateSectionCollection("Rectangular Hollow Sections", "RHS", UKSections.RHS, s => new RectangularHollowSection(s) { Fabrication = SectionFabrication.HotFinished }));
 
             // EA
-            structPropCollection = new SectionCollection("Equal Angle Sections", "EA");
-            this.ParseSectionResourceFile(UKSections.EA).ForEach(o => structPropCollection.AddSection(new AngleSection(o)
-            {
-                Fabrication = SectionFabrication.Rolled
-            }));
-            regionalSectionsCatalogue.AddSectionCollection(structPropCollection);
+            sectionCatalogue.AddSectionCollection(this.CreateSectionCollection("Equal Angle Sections", "EA", UKSections.EA, s => new AngleSection(s) { Fabrication = SectionFabrication.Rolled }));
+
+            return sectionCatalogue;
         }
 
         SectionCollection CreateSectionCollection<T>(string denomination, string abbreviation, string rawSectionData, Func<string[], T> sectionCreationFunc)
@@ -7468,7 +7405,7 @@ namespace SectionCatalogue
         {
             var sectionCollection = new SectionCollection(denomination, abbreviation);
 
-            this.ParseSectionResourceFile(rawSectionData).ForEach(s =>
+            this.LoadSectionResourceFile(rawSectionData).ToList().ForEach(s =>
             {
                 var newSection = sectionCreationFunc.Invoke(s);
 
@@ -7478,7 +7415,7 @@ namespace SectionCatalogue
             return sectionCollection;
         }
 
-        List<string[]> ParseSectionResourceFile(string sectionResourceFile)
+        IEnumerable<string[]> LoadSectionResourceFile(string sectionResourceFile)
         {
             var sectionData = new List<string[]>();
 

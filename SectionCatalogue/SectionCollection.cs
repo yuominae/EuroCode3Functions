@@ -19,7 +19,7 @@ namespace SectionCatalogue
 
         public string Abbreviation { get; }
 
-        public void AddSection(SectionBase Section)
+        public void AddSection<T>(T Section) where T : SectionBase
         {
             string sectionDenomination = Section.Denomination.ToLower();
 
@@ -31,9 +31,14 @@ namespace SectionCatalogue
             this.sections.Add(sectionDenomination, Section);
         }
 
+        public SectionBase GetSection(string sectionDenomination)
+        {
+            return this.sections[sectionDenomination.ToLower()];
+        }
+
         public T GetSection<T>(string sectionDenomination) where T : SectionBase
         {
-            return (T)this.sections[sectionDenomination.ToLower()];
+            return (T)this.GetSection(sectionDenomination);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace SectionCatalogue.SectionProperties
 
         public double r { get; set; }
 
-        public SectionFabrication fabrication = SectionFabrication.Welded;
+        public SectionFabrication Fabrication { get; set; } = SectionFabrication.Welded;
 
         public override Symmetry Symmetry
         {
@@ -143,7 +143,7 @@ namespace SectionCatalogue.SectionProperties
         {
             Av av = new Av();
             double num = this.h - 2.0 * this.tf;
-            if (this.fabrication == SectionFabrication.Rolled)
+            if (this.Fabrication == SectionFabrication.Rolled)
             {
                 av.Avyy = this.A - 2.0 * this.b * this.tf + (this.tw + 2.0 * this.r) * this.tf;
                 double num2 = 1.2;
@@ -159,7 +159,7 @@ namespace SectionCatalogue.SectionProperties
 
                 return av;
             }
-            else if (this.fabrication == SectionFabrication.Welded)
+            else if (this.Fabrication == SectionFabrication.Welded)
             {
                 double num3 = 1.2;
                 if (fy > 460.0)
@@ -179,7 +179,7 @@ namespace SectionCatalogue.SectionProperties
         public override EN1993CompressionBucklingCurve GetEN1993CompressionBucklingCurves(EN1993SteelGrade steelGrade)
         {
             EN1993CompressionBucklingCurve eN1993CompressionBucklingCurves = new EN1993CompressionBucklingCurve();
-            if (this.fabrication == SectionFabrication.Rolled)
+            if (this.Fabrication == SectionFabrication.Rolled)
             {
                 eN1993CompressionBucklingCurves.majorAxis = EN1993CompressionBucklingCurves.d;
                 eN1993CompressionBucklingCurves.minorAxis = EN1993CompressionBucklingCurves.d;
@@ -261,7 +261,7 @@ namespace SectionCatalogue.SectionProperties
         public override EN1993LTBBucklingCurve GetEN1993LTBBucklingCurve()
         {
             EN1993LTBBucklingCurve eN1993LTBBucklingCurve = new EN1993LTBBucklingCurve();
-            if (this.fabrication == SectionFabrication.Rolled)
+            if (this.Fabrication == SectionFabrication.Rolled)
             {
                 if (this.h / this.b > 2.0)
                 {
