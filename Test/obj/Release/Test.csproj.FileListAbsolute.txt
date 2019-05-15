@@ -20,3 +20,17 @@ C:\Users\RISE123\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions
 C:\Users\RISE123\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\Test\bin\Release\EC3Functions.pdb
 C:\Users\RISE123\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\Test\bin\Release\SectionCatalogue.pdb
 C:\Users\RISE123\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\Test\obj\Release\Test.csprojResolveAssemblyReference.cache
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\Test\bin\Release\EC3Functions-AddIn.dna
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\Test\bin\Release\Test.exe.config
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\Test\bin\Release\Test.exe
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\Test\bin\Release\Test.pdb
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\Test\bin\Release\EC3Functions.dll
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\Test\bin\Release\SectionCatalogue.dll
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\Test\bin\Release\ExcelDna.Integration.dll
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\Test\bin\Release\EC3Functions.pdb
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\Test\bin\Release\SectionCatalogue.pdb
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\Test\obj\Release\Test.csprojAssemblyReference.cache
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\Test\obj\Release\Test.csproj.CoreCompileInputs.cache
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\Test\obj\Release\Test.csproj.CopyComplete
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\Test\obj\Release\Test.exe
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\Test\obj\Release\Test.pdb

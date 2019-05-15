@@ -48,3 +48,14 @@ C:\Users\RISE123\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions
 C:\Users\RISE123\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\EC3Functions\obj\Release\EC3Functions.csprojResolveAssemblyReference.cache
 C:\Users\RISE123\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\EC3Functions\obj\Release\EC3Functions.dll
 C:\Users\RISE123\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\EC3Functions\obj\Release\EC3Functions.pdb
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\EC3Functions\bin\Release\EC3Functions-AddIn.dna
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\EC3Functions\bin\Release\EC3Functions.dll
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\EC3Functions\bin\Release\EC3Functions.pdb
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\EC3Functions\bin\Release\ExcelDna.Integration.dll
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\EC3Functions\bin\Release\SectionCatalogue.dll
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\EC3Functions\bin\Release\SectionCatalogue.pdb
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\EC3Functions\obj\Release\EC3Functions.csprojAssemblyReference.cache
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\EC3Functions\obj\Release\EC3Functions.csproj.CoreCompileInputs.cache
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\EC3Functions\obj\Release\EC3Functions.csproj.CopyComplete
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\EC3Functions\obj\Release\EC3Functions.dll
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\EC3Functions\obj\Release\EC3Functions.pdb

@@ -11,3 +11,11 @@ C:\Users\RISE123\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions
 C:\Users\RISE123\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\SectionCatalogue\obj\Release\SectionCatalogue.csproj.GenerateResource.Cache
 C:\Users\RISE123\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\SectionCatalogue\obj\Release\SectionCatalogue.dll
 C:\Users\RISE123\Documents\Visual Studio 2013\Projects\EC3Functions\EC3Functions\ec3functions\SectionCatalogue\obj\Release\SectionCatalogue.pdb
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\SectionCatalogue\bin\Release\SectionCatalogue.dll
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\SectionCatalogue\bin\Release\SectionCatalogue.pdb
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\SectionCatalogue\obj\Release\SectionCatalogue.csprojAssemblyReference.cache
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\SectionCatalogue\obj\Release\SectionCatalogue.UKSections.resources
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\SectionCatalogue\obj\Release\SectionCatalogue.csproj.GenerateResource.cache
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\SectionCatalogue\obj\Release\SectionCatalogue.csproj.CoreCompileInputs.cache
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\SectionCatalogue\obj\Release\SectionCatalogue.dll
+C:\Users\dallgayer\Documents\Private\Code\EuroCode3Functions\SectionCatalogue\obj\Release\SectionCatalogue.pdb
